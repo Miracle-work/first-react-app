@@ -3,6 +3,13 @@
     background: linear-gradient(180deg, rgb(22, 45, 67) 0%, rgb(32, 46, 123) 98%, rgb(29, 42, 116) 100%);
     height: 50px;
 }
+ 
+.dropdown{
+   border-right: 1px solid rgba(238, 238, 238, 0.402);
+}
+.dropdown a::after{
+    display: none;
+}
 
 .navbar .navbar_link{
     color: aliceblue;
@@ -15,11 +22,25 @@
 }
 
 .nav_icon{
-    font-size: 25px;
-    padding-left:5px ;
+    font-size: 20px;
+    margin:0 7px ;
+
+    &_user {
+        @extend .nav_icon;
+        font-size: 15px;
+      }
+
+    &_down {
+        @extend .nav_icon;
+        font-size: 16px;
+      }
 }
 
-.dropdown-toggle::after {
-    display: none !important; 
-  }
 
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .navbar{
+      height: 100%;
+    }
+  }
