@@ -47,3 +47,13 @@
   .btn_blue .btn_icon{
     font-size: 1.2rem;
   }
+
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .btn{
+      width:150px;
+    }
+    .btn_blue .btn_icon{
+      font-size: 1rem;
+    }
+  }  

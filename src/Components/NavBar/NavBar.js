@@ -40,7 +40,9 @@ const NavBar = () => {
             <Container>
                 <Navbar href="" className={`justify-content-start ${classes.navbar_link}`}>Logo</Navbar>
 
-                <Navbar.Toggle/>
+                <Navbar.Toggle className={`${classes.navbar_toggle}`}>
+                     <FaUserCircle className={`${classes.navbar_toggle_icon} `} />
+                </Navbar.Toggle>
 
                 <Navbar.Collapse className={`justify-content-start ${classes.navbar_link}`}>
                     <Nav>

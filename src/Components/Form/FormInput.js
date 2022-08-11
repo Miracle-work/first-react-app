@@ -30,16 +30,7 @@ const FormInput = (props) => {
             </button>
 
             {/* Modal */}
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Modal body</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>Close</Button>
-                </Modal.Footer>
-            </Modal>
-            {/* <CardModal show={show} onHide={handleClose}/> */}
+            <CardModal handleShow={show} handleClose={handleClose}/>
         </>
     );
 };

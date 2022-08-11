@@ -1,6 +1,5 @@
 .navbar{
     background: rgb(5,14,23);
-    // background: radial-gradient(180deg, rgb(22, 45, 67) 0%, rgb(32, 46, 123) 98%, rgb(29, 42, 116) 100%);
     background: radial-gradient(circle at center,#0b3894 0,#0D1A68,#0D1A68 100%);
     height: 50px;
 }
@@ -15,6 +14,11 @@
 .navbar .navbar_link{
     color: aliceblue;
     padding: 12px;
+}
+
+.navbar_toggle_icon{
+  color: aliceblue;
+  outline: none;
 }
 
 .logo{
@@ -44,4 +48,7 @@
     .navbar{
       height: 100%;
     }
+    .dropdown{
+      border: none;
+   }
   }
