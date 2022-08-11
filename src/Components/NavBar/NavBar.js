@@ -14,14 +14,25 @@ import { IoIosArrowUp } from "react-icons/io";
 import classes from './NavBar.module.scss';
 
 const NavBar = () => {
-    const [arrow,setArrow]= useState('down')
-    const arrowHandler=()=>{
-        if(arrow === 'down'){
-            setArrow('up');
-        }else{
-            setArrow('down');
-        }
-    }
+    const [dropdown,setDropdown]= useState([
+        {
+       id: 1
+        ,
+        isOpened:false
+     },
+     {
+        id: 2
+         ,
+         isOpened:false
+      },
+   ])
+
+    const arrowHandler=(id)=>{
+        console.log(id);
+       let element = dropdown.find(c=> c.id == id);
+       element.isOpened = !element.isOpened;
+       setDropdown([...dropdown]);
+    };
 
     return (
 
@@ -38,10 +49,10 @@ const NavBar = () => {
                                 <AiOutlineSetting className={`${classes.nav_icon}`} /> 
                                 التصنيع
                                 {
-                                    arrow === 'down' ? <IoIosArrowDown className={`${classes.nav_icon_down}`} /> : <IoIosArrowUp className={`${classes.nav_icon_down}`} /> 
+                                    dropdown[0].isOpened  ? <IoIosArrowDown className={`${classes.nav_icon_down}`} /> : <IoIosArrowUp className={`${classes.nav_icon_down}`} /> 
                                 }
                             </span>
-                        } onClick={arrowHandler}>
+                        } onClick={() =>arrowHandler(1)}>
                             <NavDropdown.Item href="">1</NavDropdown.Item>
                             <NavDropdown.Item href="">2</NavDropdown.Item>
                         </NavDropdown>
@@ -51,10 +62,12 @@ const NavBar = () => {
                                 <AiTwotoneBank className={`${classes.nav_icon}`} />
                                 الاصول
                                 {
-                                    arrow === 'down' ? <IoIosArrowDown className={`${classes.nav_icon_down}`} /> : <IoIosArrowUp className={`${classes.nav_icon_down}`} /> 
+                                    dropdown[1].isOpened  ? 
+                                    <IoIosArrowDown className={`${classes.nav_icon_down}`} /> : 
+                                    <IoIosArrowUp className={`${classes.nav_icon_down}`} /> 
                                 } 
                             </span>
-                        } onClick={arrowHandler}>
+                        } onClick={() => arrowHandler(2)}>
                             <NavDropdown.Item href="">1</NavDropdown.Item>
                             <NavDropdown.Item href="">2</NavDropdown.Item>
                         </NavDropdown>
