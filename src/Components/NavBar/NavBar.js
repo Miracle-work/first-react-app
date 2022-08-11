@@ -3,7 +3,6 @@ import {React,useState} from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Dropdown from 'react-bootstrap/Dropdown';
 import Container from 'react-bootstrap/Container';
 import { AiOutlineSetting } from "react-icons/ai";
 import { AiTwotoneBank } from "react-icons/ai";
@@ -17,7 +16,7 @@ import classes from './NavBar.module.scss';
 const NavBar = () => {
     const [arrow,setArrow]= useState('down')
     const arrowHandler=()=>{
-        if(arrow == 'down'){
+        if(arrow === 'down'){
             setArrow('up');
         }else{
             setArrow('down');
@@ -39,7 +38,7 @@ const NavBar = () => {
                                 <AiOutlineSetting className={`${classes.nav_icon}`} /> 
                                 التصنيع
                                 {
-                                    arrow == 'down' ? <IoIosArrowDown className={`${classes.nav_icon_down}`} /> : <IoIosArrowUp className={`${classes.nav_icon_down}`} /> 
+                                    arrow === 'down' ? <IoIosArrowDown className={`${classes.nav_icon_down}`} /> : <IoIosArrowUp className={`${classes.nav_icon_down}`} /> 
                                 }
                             </span>
                         } onClick={arrowHandler}>
@@ -52,7 +51,7 @@ const NavBar = () => {
                                 <AiTwotoneBank className={`${classes.nav_icon}`} />
                                 الاصول
                                 {
-                                    arrow == 'down' ? <IoIosArrowDown className={`${classes.nav_icon_down}`} /> : <IoIosArrowUp className={`${classes.nav_icon_down}`} /> 
+                                    arrow === 'down' ? <IoIosArrowDown className={`${classes.nav_icon_down}`} /> : <IoIosArrowUp className={`${classes.nav_icon_down}`} /> 
                                 } 
                             </span>
                         } onClick={arrowHandler}>
