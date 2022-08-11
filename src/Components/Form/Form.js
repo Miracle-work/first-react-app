@@ -32,22 +32,7 @@ const Form = () => {
                     {/* Form Inputs */}
                     <FormInput id="quality_1" firstInputName='quality_1_1' secondInputName='quality_1_2'/>
                 </div>
-                <div className={`${classes.flex_container}`}>
-                    <div className={`${classes.form_label}`}>
-                        <label htmlFor='quality_2'  className=''>معايير الجودة 2</label>
-                    </div>
-                    {/* Form Inputs */}
-                    <FormInput id="quality_2" firstInputName='quality_2_1' secondInputName='quality_2_2'/>
-                </div>
-                <div className={`${classes.flex_container}`}>
-                    <div className={`${classes.form_label}`}>
-                        <label htmlFor='quality_3' className=''>معايير الجودة 3</label>
-                    </div>
-                    {/* Form Inputs */}
-                    <FormInput id="quality_3" firstInputName='quality_3_1' secondInputName='quality_2_3'/>
-                </div>
             </div>
-            
             <Button/>
         </form>
     );
