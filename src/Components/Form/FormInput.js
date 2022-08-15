@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Modal, Button } from "react-bootstrap";
 import CardModal from '../Modal/CardModal'
 import classes from './Form.module.scss';
 import { AiOutlineSearch } from "react-icons/ai";
@@ -22,10 +21,10 @@ const FormInput = (props) => {
             <button type='button' className={`${classes.form_search_icon}`} onClick={handleShow}>
                 <AiOutlineSearch className={`${classes.icon}`}/>
             </button>
-            <button className={`${classes.form_plus_icon}`}>
+            <button type='button' onClick={props.onAddHandler} className={`${classes.form_plus_icon}`}>
                 <AiOutlinePlusCircle className={`${classes.icon}`}/>
             </button>
-            <button className={`${classes.form_minus_icon}`}>
+            <button type='button' className={`${classes.form_minus_icon}`} >
                 <AiOutlineMinusCircle className={`${classes.icon}`}/>
             </button>
 
