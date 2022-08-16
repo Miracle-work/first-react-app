@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import { React,useState } from 'react';
 import Button from '../Button/Button';
 import FormInput from './FormInput';
 import CardModal from '../Modal/CardModal'
 import classes from './Form.module.scss';
 import { AiOutlineSearch } from "react-icons/ai";
-// import { ToastContainer } from "react-toastr";
 
 const Form = () => {
+    
     // Show Modal
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -14,21 +14,23 @@ const Form = () => {
     // End show modal
     const warning='';
      const[formElement,setFormElement]=useState([
-        {id:1},
+        { id: 1 },
      ])
      const addEntryClick = () => {
         setFormElement([...formElement, {id:++formElement.length}]);
     };
     const removeEntryClick = (id) => {
-        if(formElement.length > 0){
+        if(formElement.length > 1){
             setFormElement(formElement.filter((item) => item.id !== id));
         }else{
             warning='عفوا ! لابد من التأكد علي وجود معيار واحد علي الاقل';
         }
-    };
+        }
+
 
     return (
         <>
+        
             {/* Form section */}
             <form method='' action='' dir="rtl">
                 <div className={`${classes.container}`}>
