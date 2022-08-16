@@ -4,7 +4,8 @@ import FormInput from './FormInput';
 import CardModal from '../Modal/CardModal'
 import classes from './Form.module.scss';
 import { AiOutlineSearch } from "react-icons/ai";
-
+import { ToastContainer, toast } from 'react-toastify';    
+import 'react-toastify/dist/ReactToastify.css';    
 const Form = () => {
     
     // Show Modal
@@ -12,25 +13,26 @@ const Form = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     // End show modal
-    const warning='';
+    // add form elements
      const[formElement,setFormElement]=useState([
         { id: 1 },
      ])
      const addEntryClick = () => {
         setFormElement([...formElement, {id:++formElement.length}]);
     };
+    // remove form elements
     const removeEntryClick = (id) => {
         if(formElement.length > 1){
             setFormElement(formElement.filter((item) => item.id !== id));
         }else{
-            warning='عفوا ! لابد من التأكد علي وجود معيار واحد علي الاقل';
+            toast.error('عفوا ! لابد من التأكد من وجود معيار واحد علي الاقل')
         }
-        }
+    }
 
 
     return (
         <>
-        
+        <ToastContainer />
             {/* Form section */}
             <form method='' action='' dir="rtl">
                 <div className={`${classes.container}`}>
