@@ -4,6 +4,7 @@ import FormInput from './FormInput';
 import CardModal from '../Modal/CardModal'
 import classes from './Form.module.scss';
 import { AiOutlineSearch } from "react-icons/ai";
+// import { ToastContainer } from "react-toastr";
 
 const Form = () => {
     // Show Modal
@@ -11,10 +12,21 @@ const Form = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     // End show modal
-     const[formElement,setFormElement]=useState([''])
+    const warning='';
+     const[formElement,setFormElement]=useState([
+        {id:1},
+     ])
      const addEntryClick = () => {
-        setFormElement([...formElement, `Entry ${formElement.length}`]);
+        setFormElement([...formElement, {id:++formElement.length}]);
     };
+    const removeEntryClick = (id) => {
+        if(formElement.length > 0){
+            setFormElement(formElement.filter((item) => item.id !== id));
+        }else{
+            warning='عفوا ! لابد من التأكد علي وجود معيار واحد علي الاقل';
+        }
+    };
+
     return (
         <>
             {/* Form section */}
@@ -39,12 +51,12 @@ const Form = () => {
                 <div className={`${classes.container}`}>
                 {formElement.map((item,index) => {
                      return (
-                        <div className={`${classes.flex_container}`} key={++index}>
+                        <div className={`${classes.flex_container}`} key={item.id}>
                             <div className={`${classes.form_label}`}>
-                                <label htmlFor='quality_1' className=''>معايير الجودة {++index}</label>
+                                <label htmlFor='quality_1' className=''>{`معايير الجودة ${++index}`}</label>
                             </div>
                             {/* Form Inputs */}
-                            <FormInput id="quality_1" onAddHandler={addEntryClick}  firstInputName='quality_1_1' secondInputName='quality_1_2'/>
+                            <FormInput id={`quality_${item.id}`}  onAddHandler={addEntryClick}  onRemoveHandler={()=>removeEntryClick(item.id)} firstInputName={`quality_${item.id}`} secondInputName={`quality_${item.id}`}/>
                         </div>
                         );
                     })}

@@ -18,13 +18,13 @@ const FormInput = (props) => {
             <div className={`${classes.form_input_second}`}>
                 <input type="text" secondInputName='{props.inputName}' className='form-control' />
             </div>
-            <button type='button' className={`${classes.form_search_icon}`} onClick={handleShow}>
+            <button type='button'  className={`${classes.form_search_icon}`} onClick={handleShow}>
                 <AiOutlineSearch className={`${classes.icon}`}/>
             </button>
             <button type='button' onClick={props.onAddHandler} className={`${classes.form_plus_icon}`}>
                 <AiOutlinePlusCircle className={`${classes.icon}`}/>
             </button>
-            <button type='button' className={`${classes.form_minus_icon}`} >
+            <button type='button' onClick={props.onRemoveHandler} className={`${classes.form_minus_icon}`} >
                 <AiOutlineMinusCircle className={`${classes.icon}`}/>
             </button>
 
